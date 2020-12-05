@@ -2,7 +2,19 @@ class HeapSort {
   constructor(heapSortButton) {
     this.heapSortButton = heapSortButton;
     this.array = document.querySelectorAll('.block');
-    this.heapSortButton.addEventListener('click', this.sort);
+    this.heapSortButton.addEventListener('click', async () => {
+      let buttons = document.querySelectorAll('button');
+      
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+      }
+
+      await this.sort();
+
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = false;
+      }
+    });
   }
 
   sort = async () => {
