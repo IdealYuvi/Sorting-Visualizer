@@ -2,13 +2,24 @@ class QuickSort {
   constructor(quickSortButton) {
     this.quickSortButton = quickSortButton;
 
-    this.quickSortButton.addEventListener('click', this.sort);
+    this.quickSortButton.addEventListener('click', async () => {
+      let buttons = document.querySelectorAll('button');
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+      }
+
+      await this.sort();
+
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = false;
+      }
+    });
   }
 
-  sort = () => {
+  sort = async () => {
     let array = document.querySelectorAll('.block');
 
-    this.helper(array, 0, array.length - 1);
+    await this.helper(array, 0, array.length - 1);
   };
 
   helper = async (array, startIdx, endIdx) => {
