@@ -2,7 +2,19 @@ class BubbleSort {
   constructor(bubbleSortButton) {
     this.bubbleSortButton = bubbleSortButton;
 
-    this.bubbleSortButton.addEventListener('click', this.sort);
+    this.bubbleSortButton.addEventListener('click', async () => {
+      let buttons = document.querySelectorAll('button');
+      
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+      }
+
+      await this.sort();
+
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = false;
+      }
+    });
   }
 
   sort = async () => {
