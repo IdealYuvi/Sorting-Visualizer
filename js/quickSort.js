@@ -89,11 +89,11 @@ class QuickSort {
     let leftSubarrayIsSmaller = rightIdx - 1 - startIdx < endIdx - rightIdx + 1;
 
     if (leftSubarrayIsSmaller) {
-      this.helper(array, startIdx, rightIdx - 1);
-      this.helper(array, rightIdx + 1, endIdx);
+      await this.helper(array, startIdx, rightIdx - 1);
+      await this.helper(array, rightIdx + 1, endIdx);
     } else {
-      this.helper(array, rightIdx + 1, endIdx);
-      this.helper(array, startIdx, rightIdx - 1);
+      await this.helper(array, rightIdx + 1, endIdx);
+      await this.helper(array, startIdx, rightIdx - 1);
     }
   };
 
