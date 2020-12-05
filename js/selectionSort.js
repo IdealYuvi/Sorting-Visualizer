@@ -2,7 +2,19 @@ class SelectionSort {
   constructor(selectionSortButton) {
     this.selectionSortButton = selectionSortButton;
 
-    this.selectionSortButton.addEventListener('click', this.sort);
+    this.selectionSortButton.addEventListener('click', async () => {
+      let buttons = document.querySelectorAll('button');
+      
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+      }
+
+      await this.sort();
+
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = false;
+      }
+    });
   }
 
   sort = async () => {
