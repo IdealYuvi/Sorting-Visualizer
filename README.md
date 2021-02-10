@@ -1,2 +1,2 @@
 # Sorting-Visualizer
-Welcome to my Sorting Visualizer! I built this application to visualize the fascination sorting algorithms in action. I hope that you enjoy playing around with this visualization tool just as much as I enjoyed building it. You can access it here: https://idealyuvi.github.io/Sorting-Visualizer/
+This is a visualization tool for sorting algorithms. In this application you can visualize five different sorting algorithms such as heap sort, selection sort, quick sort, insertion sort and bubble sort. You can access it here: https://idealyuvi.github.io/Sorting-Visualizer/
